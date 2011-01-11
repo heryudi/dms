@@ -1,2 +1,3 @@
-/config
+/config/core.php
+/config/database.php
 /tmp
