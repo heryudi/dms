@@ -16,6 +16,31 @@
 			<?php echo $part['Part']['model']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Parent Part'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $this->Html->link($part['ParentPart']['name'], array('controller' => 'parts', 'action' => 'view', $part['ParentPart']['id'])); ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Accessories'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $part['Part']['accessories']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Material'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $part['Part']['material']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Non Gm'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $part['Part']['non_gm']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Std Pack'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $part['Part']['std_pack']; ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Dealer Price'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $part['Part']['dealer_price']; ?>
@@ -45,11 +70,73 @@
 		<li><?php echo $this->Html->link(__('Delete Part', true), array('action' => 'delete', $part['Part']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $part['Part']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Parts', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Part', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Parts', true), array('controller' => 'parts', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Parent Part', true), array('controller' => 'parts', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Part Transactions', true), array('controller' => 'part_transactions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Part Transaction', true), array('controller' => 'part_transactions', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
-<div class="related">
+	<div class="related">
+		<h3><?php __('Related Parts');?></h3>
+	<?php if (!empty($part['ChildPart'])):?>
+		<dl>	<?php $i = 0; $class = ' class="altrow"';?>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['id'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['name'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Model');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['model'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Part Id');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['part_id'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Accessories');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['accessories'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Material');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['material'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Non Gm');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['non_gm'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Std Pack');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['std_pack'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Dealer Price');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['dealer_price'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Retail Price');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['retail_price'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['created'];?>
+&nbsp;</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified');?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+	<?php echo $part['ChildPart']['modified'];?>
+&nbsp;</dd>
+		</dl>
+	<?php endif; ?>
+		<div class="actions">
+			<ul>
+				<li><?php echo $this->Html->link(__('Edit Child Part', true), array('controller' => 'parts', 'action' => 'edit', $part['ChildPart']['id'])); ?></li>
+			</ul>
+		</div>
+	</div>
+	<div class="related">
 	<h3><?php __('Related Part Transactions');?></h3>
 	<?php if (!empty($part['PartTransaction'])):?>
 	<table cellpadding = "0" cellspacing = "0">

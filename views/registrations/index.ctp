@@ -3,12 +3,13 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('name');?></th>
+			<th><?php echo $this->Paginator->sort('reg_nr');?></th>
 			<th><?php echo $this->Paginator->sort('vehicle_id');?></th>
-			<th><?php echo $this->Paginator->sort('contact_id');?></th>
 			<th><?php echo $this->Paginator->sort('account_id');?></th>
+			<th><?php echo $this->Paginator->sort('contact_id');?></th>
 			<th><?php echo $this->Paginator->sort('year');?></th>
-			<th><?php echo $this->Paginator->sort('registration_exp_date');?></th>
+			<th><?php echo $this->Paginator->sort('color');?></th>
+			<th><?php echo $this->Paginator->sort('reg_exp_date');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
 			<th><?php echo $this->Paginator->sort('modified');?></th>
 			<th class="actions"><?php __('Actions');?></th>
@@ -23,18 +24,19 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $registration['Registration']['id']; ?>&nbsp;</td>
-		<td><?php echo $registration['Registration']['name']; ?>&nbsp;</td>
+		<td><?php echo $registration['Registration']['reg_nr']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($registration['Vehicle']['id'], array('controller' => 'vehicles', 'action' => 'view', $registration['Vehicle']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($registration['Contact']['name'], array('controller' => 'contacts', 'action' => 'view', $registration['Contact']['id'])); ?>
+			<?php echo $this->Html->link($registration['Vehicle']['vin'], array('controller' => 'vehicles', 'action' => 'view', $registration['Vehicle']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($registration['Account']['name'], array('controller' => 'accounts', 'action' => 'view', $registration['Account']['id'])); ?>
 		</td>
+		<td>
+			<?php echo $this->Html->link($registration['Contact']['name'], array('controller' => 'contacts', 'action' => 'view', $registration['Contact']['id'])); ?>
+		</td>
 		<td><?php echo $registration['Registration']['year']; ?>&nbsp;</td>
-		<td><?php echo $registration['Registration']['registration_exp_date']; ?>&nbsp;</td>
+		<td><?php echo $registration['Registration']['color']; ?>&nbsp;</td>
+		<td><?php echo $registration['Registration']['reg_exp_date']; ?>&nbsp;</td>
 		<td><?php echo $registration['Registration']['created']; ?>&nbsp;</td>
 		<td><?php echo $registration['Registration']['modified']; ?>&nbsp;</td>
 		<td class="actions">

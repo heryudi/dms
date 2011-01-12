@@ -5,6 +5,11 @@
 			<th><?php echo $this->Paginator->sort('id');?></th>
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('model');?></th>
+			<th><?php echo $this->Paginator->sort('part_id');?></th>
+			<th><?php echo $this->Paginator->sort('accessories');?></th>
+			<th><?php echo $this->Paginator->sort('material');?></th>
+			<th><?php echo $this->Paginator->sort('non_gm');?></th>
+			<th><?php echo $this->Paginator->sort('std_pack');?></th>
 			<th><?php echo $this->Paginator->sort('dealer_price');?></th>
 			<th><?php echo $this->Paginator->sort('retail_price');?></th>
 			<th><?php echo $this->Paginator->sort('created');?></th>
@@ -23,6 +28,13 @@
 		<td><?php echo $part['Part']['id']; ?>&nbsp;</td>
 		<td><?php echo $part['Part']['name']; ?>&nbsp;</td>
 		<td><?php echo $part['Part']['model']; ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($part['Part']['part_id'], array('controller' => 'parts', 'action' => 'view', $part['Part']['part_id'])); ?>
+		</td>
+		<td><?php echo $part['Part']['accessories']; ?>&nbsp;</td>
+		<td><?php echo $part['Part']['material']; ?>&nbsp;</td>
+		<td><?php echo $part['Part']['non_gm']; ?>&nbsp;</td>
+		<td><?php echo $part['Part']['std_pack']; ?>&nbsp;</td>
 		<td><?php echo $part['Part']['dealer_price']; ?>&nbsp;</td>
 		<td><?php echo $part['Part']['retail_price']; ?>&nbsp;</td>
 		<td><?php echo $part['Part']['created']; ?>&nbsp;</td>
@@ -53,6 +65,8 @@
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Part', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Parts', true), array('controller' => 'parts', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Parent Part', true), array('controller' => 'parts', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Part Transactions', true), array('controller' => 'part_transactions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Part Transaction', true), array('controller' => 'part_transactions', 'action' => 'add')); ?> </li>
 	</ul>

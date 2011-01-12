@@ -3,12 +3,13 @@
 	<fieldset>
  		<legend><?php __('Add Registration'); ?></legend>
 	<?php
-		echo $this->Form->input('name');
+		echo $this->Form->input('reg_nr');
 		echo $this->Form->input('vehicle_id');
-		echo $this->Form->input('contact_id');
 		echo $this->Form->input('account_id');
+		echo $this->Form->input('contact_id');
 		echo $this->Form->input('year');
-		echo $this->Form->input('registration_exp_date');
+		echo $this->Form->input('color');
+		echo $this->Form->input('reg_exp_date');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

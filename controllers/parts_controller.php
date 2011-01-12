@@ -4,7 +4,7 @@ class PartsController extends AppController {
 	var $name = 'Parts';
 
 	function index() {
-		$this->Part->recursive = 0;
+		$this->Part->recursive = -1;
 		$this->set('parts', $this->paginate());
 	}
 
@@ -26,6 +26,8 @@ class PartsController extends AppController {
 				$this->Session->setFlash(__('The part could not be saved. Please, try again.', true));
 			}
 		}
+		$parentParts = $this->Part->ParentPart->find('list');
+		$this->set(compact('parentParts'));
 	}
 
 	function edit($id = null) {
@@ -44,6 +46,8 @@ class PartsController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Part->read(null, $id);
 		}
+		$parentParts = $this->Part->ParentPart->find('list');
+		$this->set(compact('parentParts'));
 	}
 
 	function delete($id = null) {

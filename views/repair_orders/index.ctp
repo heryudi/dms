@@ -26,7 +26,7 @@
 	<tr<?php echo $class;?>>
 		<td><?php echo $repairOrder['RepairOrder']['id']; ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($repairOrder['Vehicle']['id'], array('controller' => 'vehicles', 'action' => 'view', $repairOrder['Vehicle']['id'])); ?>
+			<?php echo $this->Html->link($repairOrder['Vehicle']['vin'], array('controller' => 'vehicles', 'action' => 'view', $repairOrder['Vehicle']['id'])); ?>
 		</td>
 		<td><?php echo $repairOrder['RepairOrder']['barcode']; ?>&nbsp;</td>
 		<td><?php echo $repairOrder['RepairOrder']['odometer']; ?>&nbsp;</td>

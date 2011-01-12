@@ -6,19 +6,14 @@
 			<?php echo $registration['Registration']['id']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Reg Nr'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $registration['Registration']['name']; ?>
+			<?php echo $registration['Registration']['reg_nr']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Vehicle'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($registration['Vehicle']['id'], array('controller' => 'vehicles', 'action' => 'view', $registration['Vehicle']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Contact'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($registration['Contact']['name'], array('controller' => 'contacts', 'action' => 'view', $registration['Contact']['id'])); ?>
+			<?php echo $this->Html->link($registration['Vehicle']['vin'], array('controller' => 'vehicles', 'action' => 'view', $registration['Vehicle']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Account'); ?></dt>
@@ -26,14 +21,24 @@
 			<?php echo $this->Html->link($registration['Account']['name'], array('controller' => 'accounts', 'action' => 'view', $registration['Account']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Contact'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $this->Html->link($registration['Contact']['name'], array('controller' => 'contacts', 'action' => 'view', $registration['Contact']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Year'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $registration['Registration']['year']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Registration Exp Date'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Color'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $registration['Registration']['registration_exp_date']; ?>
+			<?php echo $registration['Registration']['color']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Reg Exp Date'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $registration['Registration']['reg_exp_date']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>

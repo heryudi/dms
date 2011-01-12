@@ -1,9 +1,9 @@
 <?php
-/* Part Test cases generated on: 2011-01-11 14:01:01 : 1294729321*/
+/* Part Test cases generated on: 2011-01-12 12:01:02 : 1294810022*/
 App::import('Model', 'Part');
 
 class PartTestCase extends CakeTestCase {
-	var $fixtures = array('app.part', 'app.part_transaction', 'app.repair_order', 'app.contact', 'app.account', 'app.account_phone', 'app.registration', 'app.contact_phone', 'app.invoice', 'app.repair');
+	var $fixtures = array('app.part', 'app.part_transaction', 'app.repair_order', 'app.vehicle', 'app.type', 'app.labour', 'app.repair', 'app.complaint', 'app.invoice', 'app.labours_type', 'app.registration', 'app.contact', 'app.account', 'app.account_phone', 'app.contact_phone');
 
 	function startTest() {
 		$this->Part =& ClassRegistry::init('Part');

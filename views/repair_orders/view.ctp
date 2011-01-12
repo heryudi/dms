@@ -8,7 +8,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Vehicle'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($repairOrder['Vehicle']['id'], array('controller' => 'vehicles', 'action' => 'view', $repairOrder['Vehicle']['id'])); ?>
+			<?php echo $this->Html->link($repairOrder['Vehicle']['vin'], array('controller' => 'vehicles', 'action' => 'view', $repairOrder['Vehicle']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Barcode'); ?></dt>

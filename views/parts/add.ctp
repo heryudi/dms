@@ -5,6 +5,11 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('model');
+		echo $this->Form->input('part_id');
+		echo $this->Form->input('accessories');
+		echo $this->Form->input('material');
+		echo $this->Form->input('non_gm');
+		echo $this->Form->input('std_pack');
 		echo $this->Form->input('dealer_price');
 		echo $this->Form->input('retail_price');
 	?>
@@ -16,6 +21,8 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Parts', true), array('action' => 'index'));?></li>
+		<li><?php echo $this->Html->link(__('List Parts', true), array('controller' => 'parts', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Parent Part', true), array('controller' => 'parts', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Part Transactions', true), array('controller' => 'part_transactions', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Part Transaction', true), array('controller' => 'part_transactions', 'action' => 'add')); ?> </li>
 	</ul>

@@ -54,12 +54,13 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Name'); ?></th>
+		<th><?php __('Reg Nr'); ?></th>
 		<th><?php __('Vehicle Id'); ?></th>
-		<th><?php __('Contact Id'); ?></th>
 		<th><?php __('Account Id'); ?></th>
+		<th><?php __('Contact Id'); ?></th>
 		<th><?php __('Year'); ?></th>
-		<th><?php __('Registration Exp Date'); ?></th>
+		<th><?php __('Color'); ?></th>
+		<th><?php __('Reg Exp Date'); ?></th>
 		<th><?php __('Created'); ?></th>
 		<th><?php __('Modified'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
@@ -74,12 +75,13 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $registration['id'];?></td>
-			<td><?php echo $registration['name'];?></td>
+			<td><?php echo $registration['reg_nr'];?></td>
 			<td><?php echo $registration['vehicle_id'];?></td>
-			<td><?php echo $registration['contact_id'];?></td>
 			<td><?php echo $registration['account_id'];?></td>
+			<td><?php echo $registration['contact_id'];?></td>
 			<td><?php echo $registration['year'];?></td>
-			<td><?php echo $registration['registration_exp_date'];?></td>
+			<td><?php echo $registration['color'];?></td>
+			<td><?php echo $registration['reg_exp_date'];?></td>
 			<td><?php echo $registration['created'];?></td>
 			<td><?php echo $registration['modified'];?></td>
 			<td class="actions">
@@ -104,6 +106,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
+		<th><?php __('Invoice Id'); ?></th>
 		<th><?php __('Vehicle Id'); ?></th>
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Odometer'); ?></th>
@@ -112,6 +115,7 @@
 		<th><?php __('In'); ?></th>
 		<th><?php __('Out'); ?></th>
 		<th><?php __('Cancel Note'); ?></th>
+		<th><?php __('Note'); ?></th>
 		<th><?php __('Created'); ?></th>
 		<th><?php __('Modified'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
@@ -126,6 +130,7 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $repairOrder['id'];?></td>
+			<td><?php echo $repairOrder['invoice_id'];?></td>
 			<td><?php echo $repairOrder['vehicle_id'];?></td>
 			<td><?php echo $repairOrder['barcode'];?></td>
 			<td><?php echo $repairOrder['odometer'];?></td>
@@ -134,6 +139,7 @@
 			<td><?php echo $repairOrder['in'];?></td>
 			<td><?php echo $repairOrder['out'];?></td>
 			<td><?php echo $repairOrder['cancel_note'];?></td>
+			<td><?php echo $repairOrder['note'];?></td>
 			<td><?php echo $repairOrder['created'];?></td>
 			<td><?php echo $repairOrder['modified'];?></td>
 			<td class="actions">
